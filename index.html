@@ -26,12 +26,21 @@
     border: 5px solid #DAA520; /* Coin edge */
     font-weight: bold;
     cursor: pointer;
+    transition: transform 0.3s ease; /* Smooth transition for the button press */
+  }
+  .coin-button:hover {
+    background-color: #ffd700; /* Lighter gold color on hover */
+    transform: scale(1.1); /* Slightly increase size on hover */
+  }
+  .coin-button:active {
+    transform: scale(0.9); /* Slightly decrease size on click */
+    background-color: #b8860b; /* Darker gold color on click */
   }
 </style>
 </head>
 <body>
   <div class="coin-button">
-    COIN
+    BOOST
   </div>
 </body>
 </html>
