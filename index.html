@@ -28,20 +28,33 @@
     cursor: pointer;
     transition: transform 0.3s ease; /* Smooth transition for the button press */
     user-select: none;
+    outline: none; /* Remove focus outline */
   }
   .coin-button:hover {
     background-color: #ffd700; /* Lighter gold color on hover */
     transform: scale(1.1); /* Slightly increase size on hover */
   }
-  .coin-button:active {
+  .coin-button:active, .coin-button.clicked {
     transform: scale(0.9); /* Slightly decrease size on click */
     background-color: #b8860b; /* Darker gold color on click */
   }
 </style>
 </head>
 <body>
-  <div class="coin-button">
+  <div class="coin-button" id="coinButton">
     BOOST
   </div>
+  <script>
+    // Get the button element
+    var coinButton = document.getElementById('coinButton');
+    
+    // Add touch event listeners
+    coinButton.addEventListener('touchstart', function() {
+      coinButton.classList.add('clicked');
+    });
+    coinButton.addEventListener('touchend', function() {
+      coinButton.classList.remove('clicked');
+    });
+  </script>
 </body>
 </html>
